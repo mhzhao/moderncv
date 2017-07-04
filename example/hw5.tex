@@ -1,0 +1,209 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+\usepackage{array}
+\usepackage{fontspec}
+\usepackage{fontawesome}
+\usepackage{pifont}
+\usepackage{fancyhdr}
+\usepackage{fancyvrb}
+\usepackage{xcolor}
+\usepackage{colortbl}
+%\usepackage{minted}
+%\usepackage{listings}
+\usepackage{multirow}
+\usepackage{physics}
+\usepackage{amssymb}
+\usepackage[bottom,stable]{footmisc}
+\usepackage{lastpage}
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+\lhead{Q.F.T}
+%\chead{{\fontspec[]{CALLIG15}\large{curriculum}} vit\ae{}}
+\chead{HW5}
+\rhead{October 6, 2015}
+\rfoot{\thepage / \pageref{LastPage}}
+\renewcommand{\headrulewidth}{3.0pt}
+%\newcommand{\cmd}[1]{{\bf \color{red}#1}} % highlights command
+%\newcommand\faSkype{{\FA\symbol{"F17E}}}
+%\newcommand\faWeibo{{\FA\symbol{"F18A}}}
+%\newcommand\faRenren{{\FA\symbol{"F18B}}}
+\RecustomVerbatimCommand{\VerbatimInput}{VerbatimInput}%
+{fontsize=\footnotesize,
+	 %
+	 frame=lines,  % top and bottom rule only
+	  framesep=2em, % separation between frame and text
+	   rulecolor=\color{gray},
+	    %
+	    label=\fbox{\color{black}Results.txt},
+	     labelposition=topline,
+	      %
+	      commandchars=\|\(\), % escape character and argument delimiters for
+	                            % commands within the verbatim
+	       commentchar=*        % comment character
+       }
+% moderncv themes
+\moderncvstyle{banking}                             % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{red}                               % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+%\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+%\renewcommand{\theFancyVerbLine}{\sffamily\textcolor[rgb]{0.5,0.5,1.0}{\tiny\oldstylenums{\arabic{FancyVerbLine}}}}
+%\usemintedstyle{emacs} % possible styles: monokai, manni, colorful, default, trac, tango, fruity, autumn, emacs, vim
+
+%\definecolor{bg1}{rgb}{1.0,0.95,0.95}
+%\definecolor{bg2}{rgb}{0.95,1.0,0.95}
+%\definecolor{bg3}{rgb}{0.95,0.95,0.95}
+%\definecolor{bg4}{rgb}{0.00,0.00,0.00}
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\columncolor{black}\color{white}\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+% adjust the page margins
+\usepackage[scale=0.75,bottom=0.8in,top=1.04in]{geometry}
+
+% personal data
+\name{Minghui}{Zhao}
+\title{HW5}                               % optional, remove / comment the line if not wanted
+\universityaddress{201 Physics Hall}{50011 Ames}{U.S}
+\phone[mobile]{+1~(515)~598~6213}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
+\email{mhzhao@iastate.edu}                               % optional, remove / comment the line if not wanted
+
+\makeatletter
+\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+\makeatother
+\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+%\begin{minipage}[t]{\textwidth}
+\makecvtitle
+
+\vspace{-1.2cm}
+\section{5.a Langrangian Problem}
+\large
+What we have
+\begin{equation*}
+\begin{split}
+	&\mathcal{L} = -\frac{1}{2}\partial^{\mu}\varphi\partial_{\mu}\varphi -\frac{1}{2}m^2\varphi^2 + \frac{1}{6}g\varphi^3 + \frac{1}{24}h\varphi^4
+\\
+	where
+\\
+	&  \expval{\varphi(0)}{0} = v
+\\
+	&  \matrixel{p}{\varphi(0)}{0} = u
+\end{split}
+\end{equation*}
+Now we want to get a Langrangian density with a normalized $\varphi'$ to statisfy
+\begin{equation*}
+\begin{split}
+	&  \expval{\varphi(0)'}{0} = 0
+\\
+	&  \matrixel{p}{\varphi(0)'}{0} = 1
+\end{split}
+\end{equation*}
+What I do here is tranfering $\varphi$ to $\varphi'$ like this
+\begin{equation*}
+	\varphi' = \frac{\varphi - v}{u} \Longrightarrow \varphi = u\varphi' + v
+\end{equation*}
+substitute $\varphi$ using $\varphi'$ into the Lagrangian density equation, we get
+\begin{equation*}
+\begin{split}
+	\mathcal{L} = & -\frac{1}{2}\partial^{\mu}\varphi\partial_{\mu}\varphi - \frac{1}{2}m^2{\varphi}^2 + \frac{1}{6}g{\varphi}^3 + \frac{1}{24}h{\varphi}^4
+	\\
+	= & -\frac{1}{2}\partial^{\mu}(u\varphi' + v)\partial_{\mu}(u\varphi' + v) - \frac{1}{2}m^2(u\varphi' + v)^2 + \frac{1}{6}g(u\varphi' + v)^3 + \frac{1}{24}h(u\varphi' + v)^4
+	\\
+	= & -\frac{1}{2}{u^2}\partial^{\mu}\varphi'\partial_{\mu}\varphi' - \frac{v^2}{2}
+	\\
+	&  - \frac{m^2u^2{\varphi'}^2}{2} - {m^2uv\varphi'} - \frac{m^2v^2}{2}
+	\\
+	& + \frac{gu^3{\varphi'}^3}{6} + \frac{gu^2v{\varphi'}^2}{2} + \frac{guv^2\varphi'}{2} + \frac{gv^3}{6}
+	\\
+	& + \frac{hu^4{\varphi'}^4}{24} + \frac{hu^3v{\varphi'}^3}{6} + \frac{hu^2v^2{\varphi'}^2}{4} + \frac{huv^3\varphi'}{6} + \frac{hv^4}{24}
+	\\
+	= & -\frac{1}{2}Z_{\varphi'}\partial^{\mu}\varphi'\partial_{\mu}\varphi -\frac{1}{2}m^2Z_{m}{\varphi'}^2 + \frac{1}{6}Z_{g}g{\varphi'}^3 + \frac{1}{24}Z_{h}h{\varphi'}^4 + Y\varphi' + \Omega_{0}
+\end{split}
+\end{equation*}
+Where 
+\begin{equation*}
+\begin{split}
+	Z_{\varphi} & = {u^2}
+	\\
+	Z_{m} & = {u^2} - \frac{gu^2v}{m^2} - \frac{hu^2v^2}{2m^2}
+	\\
+	Z_{g} & = {u^3} + \frac{hu^3v}{g}
+	\\
+	Z_{h} & = {u^4}
+	\\
+	Y & = -{m^2uv} + \frac{guv^2}{2} + \frac{huv^3}{6}
+	\\
+	\Omega_{0} & = -\frac{v^2}{2} - \frac{m^2v^2}{2} + \frac{gv^3}{6} + \frac{hv^4}{24}
+\end{split}
+\end{equation*}
+\clearpage
+\section{5.b Method Of Steepest Descents\textcolor{black}{\footnotemark[1]}}
+\enlargethispage{\footskip}
+\footnotetext[1]{Arfken, G. "Method of Steepest Descents." \S 12.7 in \textit{Mathematical Methods for Physicists, 7th ed.} Elsevier pp. 585-589, 2013}
+Consider the asymptotic behavior (for large $t$, assumed real) of a function $f(t)$, where
+\vspace{0.2cm}
+\begin{itemize}
+	\item $f(t)$ is represented by an integral of the generic form
+		\begin{equation*}
+			f(t) = \int\limits_{C} F(z,t) dz,
+		\end{equation*}
+		with $F(z,t)$ analytic in $z$, but also parametrically dependent on $t$;
+	\item The integration path $C$ is, or can be deformed to be, such that for large $t$ the dominant contribution to the integral arises from a small range of $z$ in the neighborhood of the point $z_{0}$ where $|F(z_{0},t)|$ is a maximum \textbf{on the path;}
+	\item The integration path will pass through $z_{0}$ in the orientation that causes the most rapid decrease in $|F|$ on departure from $z_{0}$ in either direction along the path (hence the name \textbf{steepest descents}); and 
+	\item In the limit of large $t$ the contribution to the integral from the neighborhood of $z_{0}$ asymptotically approaches the exact value of $f(t)$.
+\end{itemize}
+\vspace{0.2cm}
+We call $z_{0}$ as saddle point. For analytic functions, they do not have maxima and minima of their moduli in the range of their analyticity, they have only saddle points.
+Once we identify $z_{0}$ and the directions of steepest desent in $|F(z,t)|$, we complete the specification of the method of steepest descents, also called the \textbf{saddle point method} of asymptotic approximation, by assuming that the significant contributions to the integral are from a small range of $0 \le r \le a$ in each of the two directions along the path.
+
+\vspace{0.2cm}
+For example, take the form 
+\begin{equation*}
+	F(z,t) = e^{w(z,t)} = e^{u(z,t) + iv(z,t)}
+\end{equation*}
+if the contour $C$ can be deformed in such a way that it passes through the saddle point in the direction of the steepest descent, 
+the large value of parameter $t$ ensures that the essential contribution to the integral comes from a small vicinity of the saddle point since the exponent quickly decreaseds and the detailed shape of the curve of the steepest decent far from the saddle point is not important. 
+In the saddle point the derivative $w' = 0$. The direction of the steepest descent is determined by the requirement that the difference $u(z,t) - u(z_{0},t)$ is negative. By Taylor expanding $w(z,t)$ about $z_{0}$ and introduing polar forms, we can get 
+\begin{equation*}
+	f(t) \approx 2e^{w_{0} + i\theta}\int\limits^{a}_{0} e^{-|w_{0}''|r^2/2} dr
+\end{equation*}
+Now make the key assumption of the method, namely that $|w_{0}''|$, 
+the measure of the rate of decrease in $|F|$ as we leave $z_{0}$, 
+is large enough that the bulk of the value of the integral has already been attained for small $a$, 
+and that the exponential decreasein the value of the intgrand enables us to replace $a$ by infinity without making significant error. 
+Take $a = \infty$, get the value $\sqrt{\pi/2|w_{0}''|}$ of the integral. Then we get
+\begin{equation*}
+	f(t) \approx F(z_{0},t)e^{i\theta}\sqrt{\frac{2\pi}{|w''(z_{0},t)|}}
+\end{equation*}
+\vspace{0.2cm}
+Sometimes it is sufficient to apply the method of steepest descents only to the rapidly varying of an integral. 
+\begin{equation*}
+	f(t) = \int\limits_{C} g(z,t)F(z,t)dz \approx g(z_{0},t)\int\limits_{C} F(z,t)dz
+\end{equation*}
+\end{document}
+
+
+%% end of file `template.tex'.
